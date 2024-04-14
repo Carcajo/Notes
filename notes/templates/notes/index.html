@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ваши заметки</title>
+    <style>
+        /* Общие стили для страницы */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #4caf50; /* зелёный фон */
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #fff; /* белый текст */
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #fff; /* цвет при наведении */
+        }
+
+        /* Стили для навигационных ссылок */
+        .nav-links {
+            margin-bottom: 20px;
+            margin-top: 20px; /* отступ сверху */
+        }
+
+        .nav-links a {
+            margin-right: 20px;
+            background-color: #007bff; /* синий фон */
+            padding: 10px 20px;
+            border-radius: 5px;
+            color: #fff; /* белый текст */
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            background-color: #0056b3; /* цвет при наведении */
+        }
+
+        /* Стили для заметок */
+        .note {
+            background-color: #ffc107; /* оранжевый фон */
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .note h1 {
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        .note p {
+            margin-bottom: 10px;
+        }
+
+        .note small {
+            color: #999;
+        }
+
+        /* Стили для кнопки добавления заметки */
+        .add-note-btn {
+            display: inline-block;
+            background-color: #007bff; /* синий фон */
+            color: #fff; /* белый текст */
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-right: 20px; /* расстояние между кнопками */
+        }
+
+        .add-note-btn:hover {
+            background-color: #0056b3; /* цвет при наведении */
+        }
+    </style>
+</head>
+<body>
+
+<div class="nav-links">
+    <a href="/">На главную</a>
+    <a href="/add">Добавить заметку</a>
+</div>
+
+<div class="container">
+    {% for note in notes %}
+    <div class="note">
+        <a href="detail/{{ note.id }}"><h1>{{ note.title }}</h1></a>
+        <p>{{ note.body| truncatewords:4  }}</p>
+        <small>{{ note.created }}</small>
+    </div>
+    {% endfor %}
+</div>
+
+</body>
+</html>

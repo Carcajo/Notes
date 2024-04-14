@@ -6,9 +6,9 @@
     <title>Ваши заметки</title>
     <style>
         /* Общие стили для страницы */
-        body {
+         body {
             font-family: Arial, sans-serif;
-            background-color: #4caf50; /* зелёный фон */
+            background-color: #f7f7f7; /* Светлый серый фон */
             margin: 0;
             padding: 0;
         }
@@ -21,70 +21,74 @@
 
         a {
             text-decoration: none;
-            color: #fff; /* белый текст */
+            color: #333; /* Черный текст */
             transition: color 0.3s ease;
         }
 
         a:hover {
-            color: #fff; /* цвет при наведении */
+            color: #007bff; /* Синий текст при наведении */
         }
 
         /* Стили для навигационных ссылок */
         .nav-links {
             margin-bottom: 20px;
-            margin-top: 20px; /* отступ сверху */
+            margin-top: 20px; /* Отступ сверху */
+            text-align: center; /* Центрирование ссылок */
         }
 
         .nav-links a {
             margin-right: 20px;
-            background-color: #007bff; /* синий фон */
+            background-color: transparent; /* Прозрачный фон */
             padding: 10px 20px;
             border-radius: 5px;
-            color: #fff; /* белый текст */
-            transition: background-color 0.3s ease;
+            color: #007bff; /* Синий текст */
+            border: 2px solid #007bff; /* Синяя обводка */
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
         .nav-links a:hover {
-            background-color: #0056b3; /* цвет при наведении */
+            background-color: #007bff; /* Синий фон при наведении */
+            color: #fff; /* Белый текст при наведении */
         }
 
         /* Стили для заметок */
         .note {
-            background-color: #ffc107; /* оранжевый фон */
+            background-color: #fff; /* Белый фон */
             padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Небольшая тень */
             margin-bottom: 20px;
         }
 
         .note h1 {
             margin-top: 0;
             margin-bottom: 10px;
+            color: #333; /* Черный текст заголовка */
         }
 
         .note p {
             margin-bottom: 10px;
+            color: #555; /* Темно-серый текст */
         }
 
         .note small {
-            color: #999;
+            color: #999; /* Серый текст */
         }
 
         /* Стили для кнопки добавления заметки */
         .add-note-btn {
             display: inline-block;
-            background-color: #007bff; /* синий фон */
-            color: #fff; /* белый текст */
+            background-color: #007bff; /* Синий фон */
+            color: #fff; /* Белый текст */
             padding: 10px 20px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s ease;
-            margin-right: 20px; /* расстояние между кнопками */
         }
 
         .add-note-btn:hover {
-            background-color: #0056b3; /* цвет при наведении */
+            background-color: #0056b3; /* Темно-синий фон при наведении */
         }
     </style>
 </head>
